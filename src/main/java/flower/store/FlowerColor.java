@@ -1,18 +1,15 @@
 package flower.store;
+import lombok.*;
+
+@Getter
 
 public enum FlowerColor {
-    /**
-     * Flower colors.
-     */
-    RED("#FF0000"), BLUE("#0000FF");
-    private final String stringRepresentation;
+    RED("#FF0000"), BLUE(""), YELLOW(""), WHITE("");
 
-    FlowerColor(String stringRepresentation) {
-        this.stringRepresentation = stringRepresentation;
+    private String code;
+
+    FlowerColor(String code) {
+        this.code = code;
     }
 
-    @Override
-    public String toString() {
-        return stringRepresentation;
-    }
 }
