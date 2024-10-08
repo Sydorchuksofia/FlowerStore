@@ -25,4 +25,3 @@ jobs:
           JAVA_FILE_NAME: checkstyle.xml
       - name: Test with Maven
         run: mvn --batch-mode --update-snapshots package
-
