@@ -1,0 +1,15 @@
+  eslint:
+    enabled: true
+  python:
+    enabled: true
+  java:
+    enabled: true
+
+# This is a placeholder; you can customize it as needed
+validations:
+  eslint:
+    enabled: true
+  flake8:
+    enabled: false
+  pmd:
+    enabled: true
