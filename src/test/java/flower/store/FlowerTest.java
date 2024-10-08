@@ -30,4 +30,27 @@ public class FlowerTest {
         flower.setColor(color);
         Assertions.assertEquals("#FF0000", flower.getColor());
     }
+
+    @Test
+    public void testSepalLength() {
+        double sepalLength = 3.5;
+        flower.setSepalLength(sepalLength);
+        Assertions.assertEquals(sepalLength, flower.getSepalLength());
+    }
+
+    @Test
+    public void testFlowerType() {
+        FlowerType type = FlowerType.CHAMOMILE;
+        flower.setFlowerType(type);
+        Assertions.assertEquals(FlowerType.CHAMOMILE, flower.getFlowerType());
+    }
+
+    @Test
+    public void testAllArgsConstructor() {
+        Flower flower = new Flower(5.5, FlowerColor.RED, 20.0, FlowerType.ROSE);
+        Assertions.assertEquals(5.5, flower.getSepalLength());
+        Assertions.assertEquals(FlowerColor.RED.getCode(), flower.getColor());
+        Assertions.assertEquals(20.0, flower.getPrice());
+        Assertions.assertEquals(FlowerType.ROSE, flower.getFlowerType());
+    }
 }
