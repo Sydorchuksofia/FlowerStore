@@ -23,7 +23,6 @@ jobs:
           DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           JAVA_FILE_NAME: checkstyle.xml
-          LINTER_CONFIG_FILE: .github/linters/super-linter.yaml
       - name: Test with Maven
         run: mvn --batch-mode --update-snapshots package
 
