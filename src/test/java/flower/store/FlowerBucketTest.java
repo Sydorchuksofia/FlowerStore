@@ -50,7 +50,8 @@ public class FlowerBucketTest {
 
         Flower secondFlower = new Tulip();
         secondFlower.setPrice(price);
-        FlowerPack secondFlowerPack = new FlowerPack(secondFlower, secondQuantity);
+        FlowerPack secondFlowerPack = new FlowerPack(secondFlower,
+                secondQuantity);
 
         flowerBucket.add(firstFlowerPack);
         flowerBucket.add(secondFlowerPack);
