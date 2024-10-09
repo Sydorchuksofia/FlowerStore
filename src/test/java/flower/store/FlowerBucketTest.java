@@ -9,8 +9,8 @@ import java.util.Random;
 public class FlowerBucketTest {
     private static final Random RANDOM_GENERATOR = new Random();
     private static final int MAX_QUANTITY = 1000;
-    private static final int FLOWER_PRICE = 10;
-    int price = FLOWER_PRICE;
+    private static final double FLOWER_PRICE = 10;
+    private double price = FLOWER_PRICE;
 
     private FlowerBucket flowerBucket;
 
@@ -41,21 +41,21 @@ public class FlowerBucketTest {
 
     @Test
     public void testMultiplePacksPrice() {
-        int quantity1 = RANDOM_GENERATOR.nextInt(MAX_QUANTITY);
-        int quantity2 = RANDOM_GENERATOR.nextInt(MAX_QUANTITY);
+        int firstQuantity = RANDOM_GENERATOR.nextInt(MAX_QUANTITY);
+        int secondQuantity = RANDOM_GENERATOR.nextInt(MAX_QUANTITY);
 
-        Flower flower1 = new Rose();
-        flower1.setPrice(price);
-        FlowerPack flowerPack1 = new FlowerPack(flower1, quantity1);
+        Flower firstFlower = new Rose();
+        firstFlower.setPrice(price);
+        FlowerPack firstFlowerPack = new FlowerPack(firstFlower, firstQuantity);
 
-        Flower flower2 = new Tulip();
-        flower2.setPrice(price);
-        FlowerPack flowerPack2 = new FlowerPack(flower2, quantity2);
+        Flower secondFlower = new Tulip();
+        secondFlower.setPrice(price);
+        FlowerPack secondFlowerPack = new FlowerPack(secondFlower, secondQuantity);
 
-        flowerBucket.add(flowerPack1);
-        flowerBucket.add(flowerPack2);
+        flowerBucket.add(firstFlowerPack);
+        flowerBucket.add(secondFlowerPack);
 
-        double expectedPrice = price * quantity1 + price * quantity2;
+        double expectedPrice = price * firstQuantity + price * secondQuantity;
         Assertions.assertEquals(expectedPrice, flowerBucket.getPrice());
     }
 }

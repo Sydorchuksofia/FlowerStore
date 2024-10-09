@@ -6,10 +6,7 @@ import org.junit.jupiter.api.Assertions;
 
 public class FlowerPackTest {
 
-    private FlowerPack flowerPack;
-    private Flower flower;
-
-    // Define constants to replace magic numbers
+    // Static constants placed before instance variables
     private static final double INITIAL_SEPAL_LENGTH = 5.5;
     private static final FlowerColor INITIAL_COLOR = FlowerColor.RED;
     private static final double INITIAL_PRICE = 20.0;
@@ -21,6 +18,9 @@ public class FlowerPackTest {
     private static final double NEW_PRICE = 15.0;
     private static final FlowerType NEW_FLOWER_TYPE = FlowerType.TULIP;
     private static final int NEW_COUNT = 5;
+
+    private FlowerPack flowerPack;
+    private Flower flower;
 
     @BeforeEach
     public void init() {
