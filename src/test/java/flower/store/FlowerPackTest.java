@@ -9,21 +9,34 @@ public class FlowerPackTest {
     private FlowerPack flowerPack;
     private Flower flower;
 
+    // Define constants to replace magic numbers
+    private static final double INITIAL_SEPAL_LENGTH = 5.5;
+    private static final FlowerColor INITIAL_COLOR = FlowerColor.RED;
+    private static final double INITIAL_PRICE = 20.0;
+    private static final FlowerType INITIAL_FLOWER_TYPE = FlowerType.ROSE;
+    private static final int INITIAL_COUNT = 10;
+
+    private static final double NEW_SEPAL_LENGTH = 6.0;
+    private static final FlowerColor NEW_COLOR = FlowerColor.WHITE;
+    private static final double NEW_PRICE = 15.0;
+    private static final FlowerType NEW_FLOWER_TYPE = FlowerType.TULIP;
+    private static final int NEW_COUNT = 5;
+
     @BeforeEach
     public void init() {
-        flower = new Flower(5.5, FlowerColor.RED, 20.0, FlowerType.ROSE);
-        flowerPack = new FlowerPack(flower, 10);
+        flower = new Flower(INITIAL_SEPAL_LENGTH, INITIAL_COLOR, INITIAL_PRICE, INITIAL_FLOWER_TYPE);
+        flowerPack = new FlowerPack(flower, INITIAL_COUNT);
     }
 
     @Test
     public void testAllArgsConstructor() {
         Assertions.assertEquals(flower, flowerPack.getFlower());
-        Assertions.assertEquals(10, flowerPack.getCount());
+        Assertions.assertEquals(INITIAL_COUNT, flowerPack.getCount());
     }
 
     @Test
     public void testGetPrice() {
-        double expectedPrice = flower.getPrice() * 10;
+        double expectedPrice = flower.getPrice() * INITIAL_COUNT;
         Assertions.assertEquals(expectedPrice, flowerPack.getPrice());
     }
 
@@ -34,19 +47,19 @@ public class FlowerPackTest {
 
     @Test
     public void testSetFlower() {
-        Flower newFlower = new Flower(6.0, FlowerColor.WHITE, 15.0, FlowerType.TULIP);
+        Flower newFlower = new Flower(NEW_SEPAL_LENGTH, NEW_COLOR, NEW_PRICE, NEW_FLOWER_TYPE);
         flowerPack.setFlower(newFlower);
         Assertions.assertEquals(newFlower, flowerPack.getFlower());
     }
 
     @Test
     public void testGetCount() {
-        Assertions.assertEquals(10, flowerPack.getCount());
+        Assertions.assertEquals(INITIAL_COUNT, flowerPack.getCount());
     }
 
     @Test
     public void testSetCount() {
-        flowerPack.setCount(5);
-        Assertions.assertEquals(5, flowerPack.getCount());
+        flowerPack.setCount(NEW_COUNT);
+        Assertions.assertEquals(NEW_COUNT, flowerPack.getCount());
     }
 }

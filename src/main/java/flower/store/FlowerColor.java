@@ -1,8 +1,7 @@
 package flower.store;
-import lombok.*;
 
+import lombok.Getter;
 @Getter
-
 public enum FlowerColor {
     RED("#FF0000"), BLUE("#FF0000"), YELLOW("#FF0000"), WHITE("#FF0000");
 

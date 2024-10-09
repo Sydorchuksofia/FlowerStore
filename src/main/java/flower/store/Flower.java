@@ -24,8 +24,11 @@ public class Flower {
     }
 
     public String getColor() {
-        // return color.getCode();
-        return color != null ? color.getCode() : null;
+        if (color != null) {
+            return color.getCode();
+        } else {
+            return null;
+        }
     }
     
 }

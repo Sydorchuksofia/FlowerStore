@@ -4,8 +4,21 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
-
 public class FlowerTypeTest {
+
+    // Constants for magic numbers
+    private static final double ROSE_SEPAL_LENGTH = 4.5;
+    private static final double ROSE_PRICE = 30.0;
+    private static final FlowerColor ROSE_COLOR = FlowerColor.RED;
+
+    private static final double TULIP_SEPAL_LENGTH = 3.0;
+    private static final double TULIP_PRICE = 15.0;
+    private static final FlowerColor TULIP_COLOR = FlowerColor.YELLOW;
+
+    private static final double CHAMOMILE_SEPAL_LENGTH = 2.5;
+    private static final double CHAMOMILE_PRICE = 10.0;
+    private static final FlowerColor CHAMOMILE_COLOR = FlowerColor.WHITE;
+
     private Rose rose;
     private Tulip tulip;
     private Chamomile chamomile;
@@ -19,10 +32,10 @@ public class FlowerTypeTest {
 
     @Test
     public void testRoseAllArgsConstructor() {
-        rose = new Rose(4.5, FlowerColor.RED, 30.0);
-        Assertions.assertEquals(4.5, rose.getSepalLength());
-        Assertions.assertEquals(FlowerColor.RED.getCode(), rose.getColor());
-        Assertions.assertEquals(30.0, rose.getPrice());
+        rose = new Rose(ROSE_SEPAL_LENGTH, ROSE_COLOR, ROSE_PRICE);
+        Assertions.assertEquals(ROSE_SEPAL_LENGTH, rose.getSepalLength());
+        Assertions.assertEquals(ROSE_COLOR.getCode(), rose.getColor());
+        Assertions.assertEquals(ROSE_PRICE, rose.getPrice());
         Assertions.assertEquals(FlowerType.ROSE, rose.getFlowerType());
     }
 
@@ -36,10 +49,10 @@ public class FlowerTypeTest {
 
     @Test
     public void testTulipAllArgsConstructor() {
-        tulip = new Tulip(3.0, FlowerColor.YELLOW, 15.0);
-        Assertions.assertEquals(3.0, tulip.getSepalLength());
-        Assertions.assertEquals(FlowerColor.YELLOW.getCode(), tulip.getColor());
-        Assertions.assertEquals(15.0, tulip.getPrice());
+        tulip = new Tulip(TULIP_SEPAL_LENGTH, TULIP_COLOR, TULIP_PRICE);
+        Assertions.assertEquals(TULIP_SEPAL_LENGTH, tulip.getSepalLength());
+        Assertions.assertEquals(TULIP_COLOR.getCode(), tulip.getColor());
+        Assertions.assertEquals(TULIP_PRICE, tulip.getPrice());
         Assertions.assertEquals(FlowerType.TULIP, tulip.getFlowerType());
     }
 
@@ -50,13 +63,13 @@ public class FlowerTypeTest {
         Assertions.assertEquals(0, tulip.getSepalLength());
         Assertions.assertEquals(0, tulip.getPrice());
     }
-    
+
     @Test
     public void testChamomileAllArgsConstructor() {
-        chamomile = new Chamomile(2.5, FlowerColor.WHITE, 10.0);
-        Assertions.assertEquals(2.5, chamomile.getSepalLength());
-        Assertions.assertEquals(FlowerColor.WHITE.getCode(), chamomile.getColor());
-        Assertions.assertEquals(10.0, chamomile.getPrice());
+        chamomile = new Chamomile(CHAMOMILE_SEPAL_LENGTH, CHAMOMILE_COLOR, CHAMOMILE_PRICE);
+        Assertions.assertEquals(CHAMOMILE_SEPAL_LENGTH, chamomile.getSepalLength());
+        Assertions.assertEquals(CHAMOMILE_COLOR.getCode(), chamomile.getColor());
+        Assertions.assertEquals(CHAMOMILE_PRICE, chamomile.getPrice());
         Assertions.assertEquals(FlowerType.CHAMOMILE, chamomile.getFlowerType());
     }
 
@@ -67,7 +80,7 @@ public class FlowerTypeTest {
         Assertions.assertEquals(0, chamomile.getSepalLength());
         Assertions.assertEquals(0, chamomile.getPrice());
     }
-    
+
     @Test
     public void testFlowerTypeEnumValues() {
         FlowerType[] expectedTypes = { FlowerType.CHAMOMILE, FlowerType.ROSE, FlowerType.TULIP };
@@ -80,5 +93,4 @@ public class FlowerTypeTest {
         Assertions.assertEquals(FlowerType.CHAMOMILE, FlowerType.valueOf("CHAMOMILE"));
         Assertions.assertEquals(FlowerType.TULIP, FlowerType.valueOf("TULIP"));
     }
-
 }
