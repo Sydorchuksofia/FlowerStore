@@ -24,7 +24,8 @@ public class FlowerPackTest {
 
     @BeforeEach
     public void init() {
-        flower = new Flower(INITIAL_SEPAL_LENGTH, INITIAL_COLOR, INITIAL_PRICE, INITIAL_FLOWER_TYPE);
+        flower = new Flower(INITIAL_SEPAL_LENGTH, INITIAL_COLOR,
+                INITIAL_PRICE, INITIAL_FLOWER_TYPE);
         flowerPack = new FlowerPack(flower, INITIAL_COUNT);
     }
 
@@ -47,7 +48,8 @@ public class FlowerPackTest {
 
     @Test
     public void testSetFlower() {
-        Flower newFlower = new Flower(NEW_SEPAL_LENGTH, NEW_COLOR, NEW_PRICE, NEW_FLOWER_TYPE);
+        Flower newFlower = new Flower(NEW_SEPAL_LENGTH,
+                NEW_COLOR, NEW_PRICE, NEW_FLOWER_TYPE);
         flowerPack.setFlower(newFlower);
         Assertions.assertEquals(newFlower, flowerPack.getFlower());
     }
