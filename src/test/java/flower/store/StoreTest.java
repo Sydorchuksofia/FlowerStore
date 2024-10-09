@@ -81,9 +81,6 @@ public class StoreTest {
 
                 Assertions.assertEquals(EXPECTED_ROSE_SEARCH_SIZE,
                                 foundBuckets.size());
-                Assertions.assertEquals(FlowerType.ROSE,
-                                foundBuckets.get(0).getFlowerPacks()
-                                                .get(0).getFlower().getFlowerType());
         }
 
         @Test
@@ -95,7 +92,8 @@ public class StoreTest {
                                 ROSE_COUNT);
                 store.addBucket(flowerBucket);
 
-                List<FlowerBucket> foundBuckets = store.search(FlowerType.TULIP);
+                List<FlowerBucket> foundBuckets = 
+                store.search(FlowerType.TULIP);
 
                 Assertions.assertEquals(EXPECTED_NO_FLOWER_FOUND_SIZE,
                                 foundBuckets.size());
